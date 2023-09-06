@@ -1,0 +1,363 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class MainScreen extends JFrame {
+
+	private JPanel contentPane;
+	private String NuevoJuego = "X";
+	private int xContador = 0;
+	JLabel lbl_player1Number = new JLabel("N");
+	private int oContador = 0;
+	JLabel lbl_player2Number = new JLabel("N");
+	boolean comprobador;
+	JButton btnNuevaPartida = new JButton("Nueva Partida");
+	JButton b00 = new JButton("");
+	JButton b01 = new JButton("");
+	JButton b02 = new JButton("");
+	JButton b10 = new JButton("");
+	JButton b11 = new JButton("");
+	JButton b12 = new JButton("");
+	JButton b20 = new JButton("");
+	JButton b21 = new JButton("");
+	JButton b22 = new JButton("");
+
+
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					
+					MainScreen frame = new MainScreen();
+					frame.setVisible(true);
+					
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainScreen() {
+		setTitle("Tres en Raya");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 693, 602);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(136, 183, 217));
+		panel.setForeground(new Color(0, 0, 0));
+		panel.setBounds(0, 10, 679, 556);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lbl_player1 = new JLabel("Jugador 1:");
+		lbl_player1.setFont(new Font("Consolas", Font.BOLD, 24));
+		lbl_player1.setBounds(19, 10, 136, 46);
+		panel.add(lbl_player1);
+		
+		lbl_player1Number.setFont(new Font("Consolas", Font.PLAIN, 24));
+		lbl_player1Number.setBounds(158, 10, 46, 46);
+		panel.add(lbl_player1Number);
+		
+		JLabel lbl_player2 = new JLabel("Jugador 2:");
+		lbl_player2.setFont(new Font("Consolas", Font.BOLD, 24));
+		lbl_player2.setBounds(234, 10, 136, 46);
+		panel.add(lbl_player2);
+		
+		lbl_player2Number.setFont(new Font("Consolas", Font.PLAIN, 24));
+		lbl_player2Number.setBounds(380, 10, 38, 46);
+		panel.add(lbl_player2Number);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(136, 183, 217));
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel_1.setBounds(10, 66, 659, 480);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		
+		b01.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		b01.setBounds(223, 3, 210, 150);
+		b01.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b01);
+		
+		b02.setBounds(443, 3, 210, 150);
+		b02.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b02);
+		
+		b11.setBounds(223, 161, 210, 150);
+		b11.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b11);
+		
+		b12.setBounds(443, 163, 210, 150);
+		b12.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b12);
+		
+		b21.setBounds(223, 319, 210, 150);
+		b21.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b21);
+		
+		b22.setBounds(443, 319, 210, 150);
+		b22.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b22);
+		
+		b10.setBounds(3, 161, 210, 150);
+		b10.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b10);
+		
+		b20.setBounds(3, 319, 210, 150);
+		b20.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b20);
+		
+		
+		b00.setBounds(3, 3, 210, 150);
+		b00.setFont(new Font("Consolas", Font.BOLD, 99));
+		panel_1.add(b00);
+		
+		
+		btnNuevaPartida.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				b00.setText("");
+				b00.setBackground(Color.LIGHT_GRAY);
+				
+				b01.setText("");
+				b01.setBackground(Color.LIGHT_GRAY);
+				
+				b02.setText("");
+				b02.setBackground(Color.LIGHT_GRAY);
+				
+				b10.setText("");
+				b10.setBackground(Color.LIGHT_GRAY);
+				
+				b11.setText("");
+				b11.setBackground(Color.LIGHT_GRAY);
+				
+				b12.setText("");
+				b12.setBackground(Color.LIGHT_GRAY);
+				
+				b20.setText("");
+				b20.setBackground(Color.LIGHT_GRAY);
+				
+				b21.setText("");
+				b21.setBackground(Color.LIGHT_GRAY);
+				
+				b22.setText("");
+				b22.setBackground(Color.LIGHT_GRAY);
+				
+				
+				lbl_player1Number.setText("0");
+				lbl_player2Number.setText("0");
+			}
+		});
+		btnNuevaPartida.setFont(new Font("Consolas", Font.BOLD, 14));
+		btnNuevaPartida.setBounds(466, 11, 157, 46);
+		panel.add(btnNuevaPartida);
+		
+		
+	}
+	
+	private void marcador() {
+		lbl_player1Number.setText(String.valueOf(xContador));
+		lbl_player2Number.setText(String.valueOf(oContador));
+	}
+	
+	private void elegirJugador() {
+		if(NuevoJuego.equalsIgnoreCase("X")) {
+			NuevoJuego = "O";
+		}else {
+			NuevoJuego = "X";
+		}
+	}
+	
+	private void ganarJuego() {
+		String b1 = b00.getText();
+		String b2 = b01.getText();
+		String b3 = b02.getText();
+
+		String b4 = b10.getText();
+		String b5 = b11.getText();
+		String b6 = b12.getText();
+
+		String b7 = b20.getText();
+		String b8 = b21.getText();
+		String b9 = b22.getText();
+
+		if(b1 == ("X") && b2 == ("X") && b3 == "X") {
+			JOptionPane.showMessageDialog(this, "Jugador X Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b00.setBackground(Color.red);
+			b01.setBackground(Color.red);
+			b02.setBackground(Color.red);
+			
+			xContador++;
+			
+			marcador();
+		}
+		
+		if(b4 == ("X") && b5 == ("X") && b6 == "X") {
+			JOptionPane.showMessageDialog(this, "Jugador X Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b10.setBackground(Color.red);
+			b11.setBackground(Color.red);
+			b12.setBackground(Color.red);
+			
+			xContador++;
+			
+			marcador();
+		}
+		
+		if(b7 == ("X") && b8 == ("X") && b9 == "X") {
+			JOptionPane.showMessageDialog(this, "Jugador X Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b20.setBackground(Color.red);
+			b21.setBackground(Color.red);
+			b22.setBackground(Color.red);
+			
+			xContador++;
+			
+			marcador();
+		}
+		
+		if(b1 == ("O") && b2 == ("O") && b3 == "O") {
+			JOptionPane.showMessageDialog(this, "Jugador O Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b00.setBackground(Color.red);
+			b01.setBackground(Color.red);
+			b02.setBackground(Color.red);
+			
+			oContador++;
+			
+			marcador();
+		}
+		
+		if(b4 == ("O") && b5 == ("O") && b6 == "O") {
+			JOptionPane.showMessageDialog(this, "Jugador O Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b10.setBackground(Color.red);
+			b11.setBackground(Color.red);
+			b12.setBackground(Color.red);
+			
+			oContador++;
+			
+			marcador();
+		}
+		
+		if(b7 == ("O") && b8 == ("O") && b9 == "O") {
+			JOptionPane.showMessageDialog(this, "Jugador O Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b20.setBackground(Color.red);
+			b21.setBackground(Color.red);
+			b22.setBackground(Color.red);
+			
+			oContador++;
+			
+			marcador();
+		}
+		
+		if(b1 == ("X") && b4 == ("X") && b7 == "X") {
+			JOptionPane.showMessageDialog(this, "Jugador X Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b00.setBackground(Color.red);
+			b10.setBackground(Color.red);
+			b20.setBackground(Color.red);
+			
+			xContador++;
+			
+			marcador();
+		}
+		
+		if(b1 == ("O") && b4 == ("O") && b7 == "O") {
+			JOptionPane.showMessageDialog(this, "Jugador O Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b00.setBackground(Color.red);
+			b10.setBackground(Color.red);
+			b20.setBackground(Color.red);
+			
+			oContador++;
+			
+			marcador();
+		}
+		
+		if(b2 == ("X") && b5 == ("X") && b8 == "X") {
+			JOptionPane.showMessageDialog(this, "Jugador X Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b01.setBackground(Color.red);
+			b11.setBackground(Color.red);
+			b21.setBackground(Color.red);
+			
+			xContador++;
+			
+			marcador();
+		}
+		
+		if(b2 == ("O") && b5 == ("O") && b8 == "O") {
+			JOptionPane.showMessageDialog(this, "Jugador O Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b01.setBackground(Color.red);
+			b11.setBackground(Color.red);
+			b21.setBackground(Color.red);
+			
+			oContador++;
+			
+			marcador();
+		}
+		
+		if(b3 == ("X") && b6 == ("X") && b9 == "X") {
+			JOptionPane.showMessageDialog(this, "Jugador X Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b02.setBackground(Color.red);
+			b12.setBackground(Color.red);
+			b22.setBackground(Color.red);
+			
+			xContador++;
+			
+			marcador();
+		}
+		
+		if(b2 == ("O") && b5 == ("O") && b8 == "O") {
+			JOptionPane.showMessageDialog(this, "Jugador O Gana", "Tres en Raya", JOptionPane.INFORMATION_MESSAGE);
+			
+			b01.setBackground(Color.red);
+			b11.setBackground(Color.red);
+			b21.setBackground(Color.red);
+			
+			oContador++;
+			
+			marcador();
+		}
+
+	}
+}
